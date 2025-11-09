@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    svg {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+    }
+
+    .shape {
+        stroke: rgb(0, 0, 0);
+        stroke-width: 2;
+    }
+
+    @keyframes moveSquare {
+        0% {
+            transform: translate(5vw, 5vh);
+        }
+
+        50% {
+            transform: translate(5vw, 70vh);
+        }
+
+        100% {
+            transform: translate(5vw, 5vh);
+        }
+    }
+
+    @keyframes moveRect {
+        0% {
+            transform: translate(70vw, 10vh);
+        }
+
+        50% {
+            transform: translate(60vw, 40vh);
+        }
+
+        100% {
+            transform: translate(70vw, 10vh);
+        }
+    }
+
+    @keyframes moveCircle {
+        0% {
+            transform: translate(50vw, 50vh);
+        }
+
+        50% {
+            transform: translate(80vw, 70vh);
+        }
+
+        100% {
+            transform: translate(50vw, 50vh);
+        }
+    }
+
+    @keyframes moveEllipse {
+        0% {
+            transform: translate(20vw, 80vh);
+        }
+
+        50% {
+            transform: translate(35vw, 30vh);
+        }
+
+        100% {
+            transform: translate(20vw, 80vh);
+        }
+    }
+
+    .sq {
+        animation: moveSquare 6s ease-in-out infinite;
+    }
+
+    .rect {
+        animation: moveRect 7s ease-in-out infinite;
+    }
+
+    .circ {
+        animation: moveCircle 8s ease-in-out infinite;
+    }
+
+    .ell {
+        animation: moveEllipse 9s ease-in-out infinite;
+    }
+
+    @keyframes colorChange {
+        0% {
+            fill: rgb(0, 0, 255);
+            stroke: rgb(0, 0, 0);
+        }
+
+        50% {
+            fill: rgb(255, 0, 255);
+            stroke: rgb(255, 255, 255);
+        }
+
+        100% {
+            fill: rgb(0, 0, 255);
+            stroke: rgb(0, 0, 0);
+        }
+    }
+
+    .animate {
+        animation: colorChange 3s infinite alternate;
+    }
+
+    /* DVD */
+
+    img {
+        position: absolute;
+        width: 200px;
+        height: auto;
+        filter: drop-shadow(0 0 20px #00e5ff);
+        animation: dvdMove 8s linear infinite alternate;
+    }
+
+    @keyframes dvdMove {
+        0% {
+            transform: translate(0vw, 0vh);
+            filter: drop-shadow(0 0 20px #ff5a7b);
+        }
+
+        25% {
+            transform: translate(70vw, 10vh);
+            filter: drop-shadow(0 0 20px #00dd72);
+        }
+
+        50% {
+            transform: translate(70vw, 70vh);
+            filter: drop-shadow(0 0 20px #f6e743);
+        }
+
+        75% {
+            transform: translate(0vw, 70vh);
+            filter: drop-shadow(0 0 20px #00e5ff);
+        }
+
+        100% {
+            transform: translate(0vw, 0vh);
+            filter: drop-shadow(0 0 20px #d500f9);
+        }
+    }
+</style>
+
+<body>
+    <img src="./photo/Dvd_logo.svg.png" alt="">
+    <svg>
+
+        <rect class="shape sq" width="150" height="150" style="fill:rgb(255,0,0);" />
+
+        <rect class="shape rect" width="220" height="120" style="fill:rgb(0,255,0);" />
+
+        <circle class="shape circ animate-color" r="80" style="fill:rgb(0,0,255);" />
+
+        <ellipse class="shape ell" rx="120" ry="60" style="fill:rgb(255,255,0);" />
+    </svg>
+</body>
+
+</html>
